@@ -1,11 +1,14 @@
 package com.basename.service;
 
 import com.basename.models.User;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+@Service
 public class MailService {
 
     private ZoneId zoneId = ZoneId.systemDefault();

@@ -1,14 +1,19 @@
 package com.basename.service;
 
 import com.basename.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserService {
 
+    @Autowired
     private MailService mailService;
 
+    @Autowired
     private DataSource dataSource;
 
     public void  setMailService(MailService mailService){
@@ -58,5 +63,6 @@ public class UserService {
     public String getDataSource(){
         return  this.dataSource.getAddress();
     }
+
 
 }

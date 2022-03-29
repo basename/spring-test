@@ -1,9 +1,12 @@
 package com.basename.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class DataSource {
     private int id;
     private String name;
-    private String address;
+    private String address = "这是一个新的默认地址";
 
     public DataSource() {
     }
