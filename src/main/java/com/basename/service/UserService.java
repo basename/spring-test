@@ -1,5 +1,7 @@
 package com.basename.service;
 
+import com.basename.interfaces.MetricTime;
+import com.basename.interfaces.Printlog;
 import com.basename.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,7 @@ public class UserService {
                     )
     );
 
+    @Printlog(level = 1,name = "yanzhengke",value = "hhh")
     public User login(String email,String password){
 
         for (User user : users) {
@@ -46,6 +49,8 @@ public class UserService {
         return user1;
     }
 
+    @MetricTime("reginster")
+    @Printlog(level = 1,name = "yanzhengke",value = "hhh")
     public User register(String email,String password,String name){
         users.forEach(user -> {
             if (user.getEmail().equalsIgnoreCase(email)){
